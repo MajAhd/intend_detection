@@ -19,3 +19,6 @@ EXPOSE 8000
 
 
 CMD ["npm", "run", "dev"]
+
+# run production
+# CMD ["npm", "run", "prod"]
