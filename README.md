@@ -1,7 +1,7 @@
 # intend_detection
 Service that classifies user messages, manages conversation flows and maintains context. The service handle general interactions, FAQ requests, and responses to suicide risk.
 
-### script
+## Scripts
 
 #### make scrips
 
@@ -42,3 +42,11 @@ npm run format
 
 ```
 
+
+## Api Documents
+
+please load api documentation to your Postman app `./docs/intend-detection.postman_collection.json`
+
+## More Details
+
+- each service layer has specific directory

@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "703df134-e6cd-4591-a6d0-041d1c39ac2e",
+		"name": "intend-detection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5248109"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000"
+				},
+				"description": "Welcome Message to Leogas user Api"
+			},
+			"response": []
+		},
+		{
+			"name": "sendMessage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidWlkIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.BfuqYqngEr_2st4UgHXFes_gqasN1zgBJ97M35_83cA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"message\": \"I’m feeling bad today.\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/sendMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sendMessage"
+					]
+				},
+				"description": "Update User Role  \nYou need to set Authorization value in request header and is equal to access_token when you create user.\n\n- Permitted Role is ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "initialCheckIn",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidWlkIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.BfuqYqngEr_2st4UgHXFes_gqasN1zgBJ97M35_83cA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/initiateCheckIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"initiateCheckIn"
+					]
+				},
+				"description": "Update User Role  \nYou need to set Authorization value in request header and is equal to access_token when you create user.\n\n- Permitted Role is ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveContext",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidWlkIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.BfuqYqngEr_2st4UgHXFes_gqasN1zgBJ97M35_83cA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/retrieveContext",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"retrieveContext"
+					]
+				},
+				"description": "Update User Role  \nYou need to set Authorization value in request header and is equal to access_token when you create user.\n\n- Permitted Role is ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "updateContext",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidWlkIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.BfuqYqngEr_2st4UgHXFes_gqasN1zgBJ97M35_83cA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"context\" : \"CheckIn2222\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/updateContext",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"updateContext"
+					]
+				},
+				"description": "Welcome Message to Leogas user Api"
+			},
+			"response": []
+		}
+	]
+}
