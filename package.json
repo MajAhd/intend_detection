@@ -1,0 +1,61 @@
+{
+  "name": "intend_detection",
+  "version": "1.0.0",
+  "description": "Intent Detection and Flow Management Challenge",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "prod": "export NODE_ENV=production && tsc && node dist/index.js",
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.{js,ts}'",
+    "lint:fix": "eslint 'src/**/*.{js,ts}' --fix",
+    "format": "prettier --write 'src/**/*.{js,ts,json}'",
+    "test": "NODE_OPTIONS=--experimental-vm-modules  jest --detectOpenHandles=false  --forceExit --silent --verbose --maxWorkers=1 --config ./jest.config.js",
+    "test:wa": "NODE_OPTIONS=--experimental-vm-modules  jest --watchAll --detectOpenHandles=false --forceExit --silent --no-cache --maxWorkers=1  --config ./jest.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MajAhd/intend_detection.git"
+  },
+  "keywords": [
+    "intent_detection"
+  ],
+  "author": "Majid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MajAhd/intend_detection/issues"
+  },
+  "homepage": "https://github.com/MajAhd/intend_detection#readme",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "compromise": "^14.14.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.13",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.7.5",
+    "@types/supertest": "^6.0.2",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.11.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1"
+  }
+}
