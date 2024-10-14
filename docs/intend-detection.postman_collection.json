@@ -24,42 +24,6 @@
 			"response": []
 		},
 		{
-			"name": "sendMessage",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidWlkIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.BfuqYqngEr_2st4UgHXFes_gqasN1zgBJ97M35_83cA",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"userId\": 1,\n    \"message\": \"I’m feeling bad today.\" \n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/sendMessage",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"sendMessage"
-					]
-				},
-				"description": "Update User Role  \nYou need to set Authorization value in request header and is equal to access_token when you create user.\n\n- Permitted Role is ADMIN"
-			},
-			"response": []
-		},
-		{
 			"name": "initialCheckIn",
 			"request": {
 				"auth": {
@@ -75,7 +39,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"userId\": 1\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,6 +56,42 @@
 					"path": [
 						"api",
 						"initiateCheckIn"
+					]
+				},
+				"description": "Update User Role  \nYou need to set Authorization value in request header and is equal to access_token when you create user.\n\n- Permitted Role is ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "sendMessage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidWlkIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.BfuqYqngEr_2st4UgHXFes_gqasN1zgBJ97M35_83cA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"I’m feeling bad today.\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/sendMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sendMessage"
 					]
 				},
 				"description": "Update User Role  \nYou need to set Authorization value in request header and is equal to access_token when you create user.\n\n- Permitted Role is ADMIN"
@@ -153,7 +153,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"context\" : \"CheckIn2222\"\n}",
+					"raw": "{\n    \"context\" : \"CheckIn\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
