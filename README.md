@@ -130,4 +130,3 @@ each service layer has specific directory
 
 ## src/services/intent.ts
 The main logic revolves around detecting user intent from a message, then generating an appropriate response based on the current flow. It uses an NLP library ([compromise](https://www.npmjs.com/package/compromise)) to process the input text, detect keywords, and map them to predefined responses. The IntentHandler manages the flow and intent detection, while helper classes (like handleFAQ, handleSuicideRisk, etc.) provide specific responses based on the detected intent.
-
