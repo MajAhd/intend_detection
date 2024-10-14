@@ -1,5 +1,5 @@
 {
-  "name": "intend_detection",
+  "name": "intent_detection",
   "version": "1.0.0",
   "description": "Intent Detection and Flow Management Challenge",
   "main": "src/index.ts",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MajAhd/intend_detection.git"
+    "url": "git+https://github.com/MajAhd/intent_detection.git"
   },
   "keywords": [
     "intent_detection"
@@ -23,12 +23,11 @@
   "author": "Majid",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MajAhd/intend_detection/issues"
+    "url": "https://github.com/MajAhd/intent_detection/issues"
   },
-  "homepage": "https://github.com/MajAhd/intend_detection#readme",
+  "homepage": "https://github.com/MajAhd/intent_detection#readme",
   "dependencies": {
     "axios": "^1.7.7",
-    "cheerio": "^1.0.0",
     "compromise": "^14.14.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

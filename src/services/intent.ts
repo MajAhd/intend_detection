@@ -84,7 +84,7 @@ export class IntentHandler {
 
 class IntentDetection {
   /***
-   * Detect intend of user message  and return intend name
+   * Detect intent of user message  and return intent name
    */
   protected message: string;
   constructor(message: string) {

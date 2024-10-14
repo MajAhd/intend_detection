@@ -1,52 +1,128 @@
-# intend_detection
+# intent_detection
 Service that classifies user messages, manages conversation flows and maintains context. The service handle general interactions, FAQ requests, and responses to suicide risk.
 
 ## Scripts
+This section provides an overview of the available commands for running, testing, and maintaining the application using the Makefile and npm scripts.
 
 #### make scrips
+The Makefile simplifies interactions with Docker and some utility tasks.
 
 ```sh
 
-#  run app via docker compose 
+# Build and run the application using Docker Compose
 make run-dev
 
-#  stop docker compose and remove volumes
+# Stop Docker Compose services and remove associated volumes
 make stop-dev
 
-# container logs
+# View live application logs from Docker Compose
 make application-logs
 
+# Run lint checks on the codebase using ESLint
+make lint
+
+# Automatically fix linting issues
+make lint-fix
+
+# Format the code using Prettier
+make format
+
+# Run the test suite once
+make test
+
+# Run tests in watch mode for active development
+make test-wa
 
 ```
 
 #### npm scrips
+The `package.json` contains various npm scripts for running the application, testing, linting, and formatting. To use these scripts, you need to run npm install first to install the dependencies.
+
 
 ```sh
+# Install project dependencies
 npm install
 
-# run development
+# Start the development server using nodemon
 npm run dev
-# build production
+
+# Build the application for production (TypeScript compilation)
 npm run build
 
-# run test
+# Run the test suite once with Jest
 npm run test
-# test watch
+
+# Run Jest in watch mode (automatically rerun tests when files change)
 npm run test:wa
 
-# lint & format
+# Lint the codebase using ESLint
 npm run lint
+
+# Automatically fix linting issues
 npm run lint:fix
-# format via prettier
+
+# Format the codebase using Prettier
 npm run format
 
 ```
 
 
+## Authentication
+This project uses [JWT](https://jwt.io/) (JSON Web Tokens) for authentication. To successfully authenticate, your JWT token must include the following payload:
+
+```json
+{
+  "uid": 123
+}
+```
+The uid field is mandatory and should represent the unique identifier for the authenticated user.
+
+When making requests to the API, include the JWT token in the Authorization header as follows:
+
+```sh
+Authorization: <your-jwt-token>
+```
+
+Ensure that your JWT is signed with the correct secret key and included in the request headers to access protected routes.
+
+* jwt secret key is equal to `very_secret_key` and you can modify it in `docker-compose.yaml` for application and `.env.test` file for test cases
+
+
 ## Api Documents
 
-please load api documentation to your Postman app `./docs/intend-detection.postman_collection.json`
+please load api documentation to your Postman app `./docs/intent-detection.postman_collection.json`
 
 ## More Details
+each service layer has specific directory
 
-- each service layer has specific directory
+- Routes (src/routes/):
+
+    The routing layer defines the API endpoints and connects them with the corresponding controller functions. This keeps route definitions separate from business logic.
+
+- Controllers (src/controllers/):
+
+    The controllers contain the logic for handling requests and responses, interacting with services and models, and defining the application's flow based on user interactions.
+
+- Middlewares (src/middlewares/):
+
+    This directory contains middleware functions that run before the controller logic is executed. For example, userAuthMiddleware ensures the user is authenticated before accessing certain routes.
+
+- Configs (src/configs/):
+
+    Configurations such as database connections, environment setup, and other system-wide settings live in this folder. For example, redisConfig manages Redis interactions.
+
+- Service Layer (src/services/):
+
+    The service layer contains specific business logic that works independently of controllers. Each service has its own dedicated directory, focusing on specific parts of the application (e.g., IntentService, UserService, etc.). The services handle the heavy lifting of processing data and communicating with external resources (like databases or APIs).
+
+- Utils (src/utils/):
+
+    Utility functions and helper methods, like validators or common functions shared across the application, are organized here.
+
+## Key Concepts
+
+- Separation of Concerns: 
+    Each layer of the application handles its own specific responsibility (Controllers for logic, Models for data, and Views for responses), ensuring better maintainability and scalability.
+
+- Service-Oriented Architecture: 
+    The service layer is dedicated to handling reusable logic, allowing the controllers to remain lightweight and focused on orchestrating application flow.

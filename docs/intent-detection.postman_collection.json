@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "703df134-e6cd-4591-a6d0-041d1c39ac2e",
-		"name": "intend-detection",
+		"name": "intent-detection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "5248109"
 	},

@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as validator from '../utils/validators';
-import * as intentController from '../controllers/intendController';
+import * as intentController from '../controllers/intentController';
 import { userAuthMiddleware } from '../middlewares/authMiddleware';
 const ApiRoutes = express.Router();
 
