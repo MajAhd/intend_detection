@@ -57,6 +57,12 @@ const intentKeywords = {
 export class IntentHandler {
   /**
    * Handle user response base on intent and currentFlow
+   * @info Depending on the detected intent, the IntentHandler routes the message to the appropriate handler class.
+   * For example, if the message includes phrases like "cancel my subscription," 
+   * the handleFAQ class will return the relevant response from the scripts object.
+   * @info The currentFlow variable determines the current state of the conversation. 
+   * If the intent involves suicide risk, the flow is updated to FlowType.SuicideRisk
+   * to reflect the gravity of the situation.
    */
   public currentFlow: FlowType = FlowType.Normal;
 
@@ -76,6 +82,10 @@ export class IntentHandler {
     }
   }
 
+  /**
+   * The CheckInFlow can also trigger a conversation aimed at checking in on the user's well-being.
+   * @returns 
+   */
   CheckInFlow(): string {
     this.currentFlow = FlowType.CheckIn;
     return new handleCheckInFlow().response();
@@ -85,6 +95,8 @@ export class IntentHandler {
 class IntentDetection {
   /***
    * Detect intent of user message  and return intent name
+   * @info When a message is sent, IntentHandler passes the message to IntentDetection,
+   * which checks for keywords related to FAQ, suicide risk, or normal conversations using the NLP library.
    */
   protected message: string;
   constructor(message: string) {
@@ -114,12 +126,14 @@ class IntentDetection {
 }
 
 /**
- * to better and cleaner code and avoid possibles changes of IntentHandler class and ease of test cases
- * I created handler for specific flow :
- * handleCheckInFlow
- * handleFAQ
- * handleSuicideRisk
- * handleNormal
+ * To improve code clarity, maintainability, and to avoid frequent modifications to the IntentHandler class,
+ * I have created specific handlers for each flow:
+ * - handleCheckInFlow
+ * - handleFAQ
+ * - handleSuicideRisk
+ * - handleNormal
+ * 
+ * This modular approach also simplifies the testing process by isolating each flow's logic into separate classes.
  */
 class handleCheckInFlow {
   response(): string {

@@ -122,7 +122,12 @@ each service layer has specific directory
 ## Key Concepts
 
 - Separation of Concerns: 
-    Each layer of the application handles its own specific responsibility (Controllers for logic, Models for data, and Views for responses), ensuring better maintainability and scalability.
+    Each layer of the application handles its own specific responsibility, ensuring better maintainability and scalability.
 
 - Service-Oriented Architecture: 
     The service layer is dedicated to handling reusable logic, allowing the controllers to remain lightweight and focused on orchestrating application flow.
+
+
+## src/services/intent.ts
+The main logic revolves around detecting user intent from a message, then generating an appropriate response based on the current flow. It uses an NLP library (compromise) to process the input text, detect keywords, and map them to predefined responses. The IntentHandler manages the flow and intent detection, while helper classes (like handleFAQ, handleSuicideRisk, etc.) provide specific responses based on the detected intent.
+
